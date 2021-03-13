@@ -10,15 +10,10 @@ import { AuthnticationService } from 'src/app/Services/authntication.service';
 })
 export class AdminpanelComponent implements OnInit {
 
-  constructor(private authService: AuthnticationService,private router:Router, location: PlatformLocation) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-  logOutForEmail(){
-    this.authService.logout();
-    this.router.navigate(['/Login'])
-   
-  
-  }
+
 
 }

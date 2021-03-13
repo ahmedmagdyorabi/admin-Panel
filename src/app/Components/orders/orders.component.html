@@ -1,0 +1,25 @@
+<!-- <p>orders works!</p> -->
+<table class="table table-hover ">
+    <thead class="bg-dark">
+      <tr>
+        <th scope="col">SN</th>
+        <th scope="col">CLient Mail</th>
+        <th scope="col">resturant</th>
+        <th scope="col">Order</th>
+        <th scope="col">Total Price</th>
+        <th scope="col">Delivery fee</th>
+      </tr>
+    </thead>
+    <tbody class="bg-info">
+        <tr *ngFor="let i of ordersList; let x = index" >
+           
+               <th>{{x+1}}</th>
+               <th>{{i.userEmail}}</th>
+               <th>{{i.resturant}}</th>
+               <th>{{i.order.meal}}</th>
+               <th>{{i.totalprice}}</th>
+               <th>{{i.deliveryfee}}</th>
+            
+        </tr>
+    </tbody>
+    </table>

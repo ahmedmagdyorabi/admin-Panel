@@ -1,0 +1,25 @@
+<!-- <p>resturant-data works!</p> -->
+<table class="table table-hover ">
+    <thead class="bg-dark">
+      <tr>
+        <th scope="col">SN</th>
+        <th scope="col">Resturant</th>
+        <th scope="col">Location</th>
+        <th scope="col">No. Of Branches</th>
+        <th scope="col">HOtLine</th>
+        <th scope="col">Food</th>
+      </tr>
+    </thead>
+    <tbody class="bg-info">
+        <tr *ngFor="let i of resturantList; let x = index" >
+           
+               <th>{{x+1}}</th>
+               <th>{{i.id}}</th>
+               <th>{{i.Location}}</th>
+               <th>{{i.Branches}}</th>
+               <th>{{i.hotLine}}</th>
+               <th>{{i.Dish}}</th>
+            
+        </tr>
+    </tbody>
+    </table>
