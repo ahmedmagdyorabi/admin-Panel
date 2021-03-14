@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'add-resturant', component: AddResturantComponent },
   { path: 'add-menu', component: AddMenuItemComponent },
   { path: 'users', component: UsersDataComponent },
-  { path: 'orders', component: OrdersComponent }
+  { path: 'orders', component: OrdersComponent },
+
 ];
 
 @NgModule({
