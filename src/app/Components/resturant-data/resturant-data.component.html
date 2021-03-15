@@ -19,6 +19,14 @@
                <th>{{i.Branches}}</th>
                <th>{{i.hotLine}}</th>
                <th>{{i.Dish}}</th>
+               <th>
+                 <button class="btn btn-sm btn-danger" (click)='deleteResturant(i.id)'>Delete</button>
+               </th>
+
+               <th>
+                <button class="btn btn-sm btn-success" (click)='editResturant(x)'>Update</button>
+              </th>
+
             
         </tr>
     </tbody>

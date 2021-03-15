@@ -1,25 +1,27 @@
-<!-- <p>orders works!</p> -->
-<table class="table table-hover ">
-    <thead class="bg-dark">
-      <tr style="color: white;">
-        <th scope="col">SN</th>
-        <th scope="col">CLient Mail</th>
-        <th scope="col">resturant</th>
-        <th scope="col">Order</th>
-        <th scope="col">Total Price</th>
-        <th scope="col">Delivery fee</th>
-      </tr>
-    </thead>
-    <tbody class="bg-info">
-        <tr *ngFor="let i of ordersList; let x = index" >
-           
-               <th>{{x+1}}</th>
-               <th>{{i.userEmail}}</th>
-               <th>{{i.resturant}}</th>
-               <th></th>
-               <th>{{i.totalprice}}</th>
-               <th>{{i.deliveryfee}}</th>
-            
-        </tr>
-    </tbody>
-    </table>
+   <div id="page-content" class="page-content myorders-page align-items-start">
+      <div class="card col-md-7 col-sm-12 mt-3 mb-4 p-4 d-inline-block ml-3"  *ngFor="let order of ordersList ; let s =index">
+        <div class="card-header">
+          <h4>UserEmail: {{order.userEmail}}</h4>
+          <h4>Resturant: {{order.resturant}}</h4>
+        </div>
+        <div class="card-body">
+            <div *ngFor="let i of order.order" class="row justify-content-between">
+                <span>{{i.quantity}} * {{i.meal}}</span>
+                <span>{{i.total  | currency:'EGP'}}</span>
+          
+            </div>
+    
+            <div class="card-footer mt-2">
+                <div class="row justify-content-between">
+                    <span>delivery fee</span>
+                    <span>{{order.deliveryfee | currency: "EGP"}}</span>
+                </div>
+                <div class="row justify-content-between">
+                    <span>Total</span>
+                <span>{{order.totalprice | currency:'EGP'}}</span>
+                </div>
+                
+            </div>
+          </div>
+      </div>
+      </div>

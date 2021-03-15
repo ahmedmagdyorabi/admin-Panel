@@ -54,6 +54,7 @@
 
   
 
-    <button type="submit" class="btn btn-primary mt-3" [disabled]="!resturantForm.valid">Add</button>
+    <button type="submit" class="btn btn-primary mt-3 mb-3" [disabled]="!resturantForm.valid">Add</button>
+    <button type="button" class="btn btn-success mt-3 mb-3 ml-3" (click)='updateResturantData()' [disabled]="!resturantForm.valid">Update</button>
 </form>
 

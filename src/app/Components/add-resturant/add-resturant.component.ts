@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ResturantDataService } from 'src/app/Services/resturant-data.service';
+import { SharedService } from 'src/app/Services/shared.service';
+import { Resturants } from 'src/app/ViewModels/resturants';
 
 @Component({
   selector: 'app-add-resturant',
@@ -11,22 +13,25 @@ import { ResturantDataService } from 'src/app/Services/resturant-data.service';
 export class AddResturantComponent implements OnInit {
 
   resturantForm: FormGroup = new FormGroup({})
+  resturantData: Resturants;
 
 
-  constructor(private fb: FormBuilder, private restService: ResturantDataService, private router: Router) { }
+  constructor(private fb: FormBuilder, private restService: ResturantDataService, private router: Router, private shService: SharedService) {
+    this.resturantData = this.shService.getResturant()
+  }
 
   ngOnInit(): void {
 
     this.resturantForm = this.fb.group({
-      id: ['', Validators.required],
-      Location: ['', Validators.required],
-      hotLine: ['', Validators.required],
-      Branches: ['', Validators.required],
-      Dish: ['', Validators.required],
-      Mood: ['', Validators.required],
-      openNow: [''],
-      img: ['', Validators.required],
-      mealImg: ['', Validators.required]
+      id: [this.resturantData.id, Validators.required],
+      Location: [this.resturantData.Location, Validators.required],
+      hotLine: [this.resturantData.hotLine, Validators.required],
+      Branches: [this.resturantData.Branches, Validators.required],
+      Dish: [this.resturantData.Dish, Validators.required],
+      Mood: [this.resturantData.Mood, Validators.required],
+      openNow: [this.resturantData.openNow],
+      img: [this.resturantData.img, Validators.required],
+      mealImg: [this.resturantData.mealImg, Validators.required]
     })
   }
 
@@ -36,6 +41,19 @@ export class AddResturantComponent implements OnInit {
         console.log(res)
         this.resturantForm.reset();
         //this.router.navigateByUrl('/resturants')
+      },
+      (err) => {
+        console.log(err)
+      }
+    )
+  }
+
+
+  updateResturantData() {
+    this.restService.updateResturantData(this.resturantForm.value).subscribe(
+      (res) => {
+        console.log(res)
+        this.router.navigateByUrl('/resturants')
       },
       (err) => {
         console.log(err)

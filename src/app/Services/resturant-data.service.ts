@@ -48,5 +48,21 @@ export class ResturantDataService {
     return this.http.post<any>(`${environment.database}/menu`, meal, httpOptions)
   }
 
+  deleteResturant(id: string): Observable<any> {
+    return this.http.delete<any>(`${environment.database}/resturants/${id}`)
+  }
+
+  updateResturantData(rest: Resturants): Observable<any> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+        //,'Accept':' */*'
+        //,'Authorization': 'my-auth-token'
+      })
+    }
+
+    return this.http.put<any>(`${environment.database}/resturants/${rest.id}`, rest, httpOptions)
+  }
 
 }
