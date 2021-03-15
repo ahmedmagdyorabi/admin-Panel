@@ -9,7 +9,7 @@ export class SharedService {
 
   menu: Imenu = { meal: '', price: 0, description: '' }
 
-  resturant: Resturants = { id: '', Location: '', hotLine: 0, img: '', mealImg: '', Branches: 0, openNow: false, Mood: '', Dish: '' }
+  resturant: Resturants = { id: 0, name: '', Location: '', hotLine: 0, img: '', mealImg: '', Branches: 0, openNow: false, Mood: '', Dish: '', arLocation: '', arName: '' }
 
   constructor() { }
 

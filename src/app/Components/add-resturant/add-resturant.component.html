@@ -3,13 +3,26 @@
 <form (ngSubmit)="addResturant()" [formGroup]="resturantForm" >
     <div class="form-group">
       <label for="RName">Resturant Name</label>
-      <input type="text" class="form-control"   id="RName" formControlName="id"   placeholder="Resturant Name">
+      <input type="text" class="form-control"   id="RName" formControlName="name"   placeholder="Resturant Name">
      
     </div>
+
+     <div class="form-group">
+      <label for="ARName">Resturant Name(Arabic)</label>
+      <input type="text" class="form-control"   id="ARName" formControlName="arName"   placeholder="اسم المطعم">
+     
+    </div>
+
 
     <div class="form-group">
         <label for="location">Location</label>
         <input type="text" class="form-control"   id="location" formControlName="Location"   placeholder="Resturant Location">
+
+    </div>
+
+    <div class="form-group">
+        <label for="arlocation">Location(Arabic)</label>
+        <input type="text" class="form-control"   id="arlocation" formControlName="arLocation"   placeholder="Resturant Location">
 
     </div>
 

@@ -23,7 +23,7 @@ export class AddResturantComponent implements OnInit {
   ngOnInit(): void {
 
     this.resturantForm = this.fb.group({
-      id: [this.resturantData.id, Validators.required],
+      name: [this.resturantData.name, Validators.required],
       Location: [this.resturantData.Location, Validators.required],
       hotLine: [this.resturantData.hotLine, Validators.required],
       Branches: [this.resturantData.Branches, Validators.required],
@@ -31,7 +31,9 @@ export class AddResturantComponent implements OnInit {
       Mood: [this.resturantData.Mood, Validators.required],
       openNow: [this.resturantData.openNow],
       img: [this.resturantData.img, Validators.required],
-      mealImg: [this.resturantData.mealImg, Validators.required]
+      mealImg: [this.resturantData.mealImg, Validators.required],
+      arName: [this.resturantData.arName, Validators.required],
+      arLocation: [this.resturantData.arLocation, Validators.required]
     })
   }
 
@@ -50,7 +52,7 @@ export class AddResturantComponent implements OnInit {
 
 
   updateResturantData() {
-    this.restService.updateResturantData(this.resturantForm.value).subscribe(
+    this.restService.updateResturantData(this.resturantForm.value, this.resturantData.id).subscribe(
       (res) => {
         console.log(res)
         this.router.navigateByUrl('/resturants')

@@ -24,7 +24,7 @@ export class ResturantDataComponent implements OnInit {
     )
   }
 
-  deleteResturant(id: string) {
+  deleteResturant(id: number) {
     this.restService.deleteResturant(id).subscribe(
       (res) => {
         console.log(res)

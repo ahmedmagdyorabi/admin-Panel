@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  database: "https://db-json-project.herokuapp.com"
+  database: "https://modified-db-project.herokuapp.com"
 };
 
 /*

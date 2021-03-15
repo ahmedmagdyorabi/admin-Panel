@@ -52,7 +52,7 @@ export class ResturantDataService {
     return this.http.post<any>(`${environment.database}/menu`, meal, httpOptions)
   }
 
-  deleteResturant(id: string): Observable<any> {
+  deleteResturant(id: number): Observable<any> {
     return this.http.delete<any>(`${environment.database}/resturants/${id}`)
   }
 
@@ -60,7 +60,7 @@ export class ResturantDataService {
     return this.http.delete<any>(`${environment.database}/menu/${id}`)
   }
 
-  updateResturantData(rest: Resturants): Observable<any> {
+  updateResturantData(rest: Resturants, id: number): Observable<any> {
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -70,7 +70,7 @@ export class ResturantDataService {
       })
     }
 
-    return this.http.put<any>(`${environment.database}/resturants/${rest.id}`, rest, httpOptions)
+    return this.http.put<any>(`${environment.database}/resturants/${id}`, rest, httpOptions)
   }
 
   updateMenuItem(meal: Imenu, id: number | undefined): Observable<any> {

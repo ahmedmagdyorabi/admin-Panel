@@ -1,5 +1,5 @@
 export interface Resturants {
-    id: string,
+    name: string,
     Location: string,
     hotLine: number,
     Branches: number,
@@ -7,5 +7,8 @@ export interface Resturants {
     Mood?: string,
     openNow?: boolean,
     img: string,
-    mealImg: string
+    mealImg: string,
+    arLocation: string,
+    arName: string,
+    id: number
 }
