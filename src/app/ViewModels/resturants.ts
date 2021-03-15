@@ -7,5 +7,6 @@ export interface Resturants {
     Mood?: string,
     openNow?: boolean,
     img: string,
-    mealImg: string
+    mealImg: string,
+    database: string
 }
