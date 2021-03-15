@@ -8,5 +8,5 @@ export interface Resturants {
     openNow?: boolean,
     img: string,
     mealImg: string,
-    database: string
+   
 }
