@@ -18,6 +18,10 @@ export class ResturantDataService {
     return this.http.get<Resturants[]>(`${environment.database}/resturants`)
   }
 
+  getMenu(): Observable<Imenu[]> {
+    return this.http.get<Imenu[]>(`${environment.database}/menu`)
+  }
+
 
   getOrders(): Observable<Iorder[]> {
     return this.http.get<Iorder[]>(`${environment.database}/orders`)
@@ -52,6 +56,10 @@ export class ResturantDataService {
     return this.http.delete<any>(`${environment.database}/resturants/${id}`)
   }
 
+  deleteMenuItem(id: number | undefined): Observable<any> {
+    return this.http.delete<any>(`${environment.database}/menu/${id}`)
+  }
+
   updateResturantData(rest: Resturants): Observable<any> {
 
     const httpOptions = {
@@ -63,6 +71,20 @@ export class ResturantDataService {
     }
 
     return this.http.put<any>(`${environment.database}/resturants/${rest.id}`, rest, httpOptions)
+  }
+
+  updateMenuItem(meal: Imenu, id: number | undefined): Observable<any> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+        //,'Accept':' */*'
+        //,'Authorization': 'my-auth-token'
+      })
+    }
+
+    return this.http.put<any>(`${environment.database}/menu/${id}`, meal, httpOptions)
+
   }
 
 }

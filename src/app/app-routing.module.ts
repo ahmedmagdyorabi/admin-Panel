@@ -4,6 +4,7 @@ import { AddMenuItemComponent } from './Components/add-menu-item/add-menu-item.c
 import { AddResturantComponent } from './Components/add-resturant/add-resturant.component';
 import { AdminpanelComponent } from './Components/adminpanel/adminpanel.component';
 import { LoginComponent } from './Components/login/login.component';
+import { MenuComponent } from './Components/menu/menu.component';
 import { OrdersComponent } from './Components/orders/orders.component';
 import { ResturantDataComponent } from './Components/resturant-data/resturant-data.component';
 import { UsersDataComponent } from './Components/users-data/users-data.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'add-menu', component: AddMenuItemComponent },
   { path: 'users', component: UsersDataComponent },
   { path: 'orders', component: OrdersComponent },
+  { path: 'menu', component: MenuComponent }
 
 ];
 

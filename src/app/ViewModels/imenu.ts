@@ -1,5 +1,6 @@
 export interface Imenu {
     meal: string,
     price: number,
-    description: string
+    description: string,
+    id?: number
 }

@@ -13,6 +13,7 @@ import { AddMenuItemComponent } from './Components/add-menu-item/add-menu-item.c
 import { UsersDataComponent } from './Components/users-data/users-data.component';
 import { OrdersComponent } from './Components/orders/orders.component';
 import { SidebarComponent } from './Components/sidebar/sidebar.component';
+import { MenuComponent } from './Components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SidebarComponent } from './Components/sidebar/sidebar.component';
     UsersDataComponent,
     OrdersComponent,
     SidebarComponent,
+    MenuComponent,
 
   ],
   imports: [

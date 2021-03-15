@@ -1,0 +1,31 @@
+<!-- <p>menu works!</p> -->
+<table class="table table-hover ">
+    <thead class="bg-dark">
+      <tr style="color: white;">
+        <th scope="col">SN</th>
+        <th scope="col">Meal</th>
+        <th scope="col">Price</th>
+        <th scope="col">Description</th>
+        
+      </tr>
+    </thead>
+    <tbody class="bg-info">
+        <tr *ngFor="let i of menu; let x = index" >
+           
+               <th>{{x+1}}</th>
+               <th>{{i.meal}}</th>
+               <th>{{i.price}}</th>
+               <th>{{i.description}}</th>
+               
+               <th>
+                 <button class="btn btn-sm btn-danger" (click)='deleteMeal(i.id)'>Delete</button>
+               </th>
+
+               <th>
+                <button class="btn btn-sm btn-success" (click)='editMeal(x)'>Update</button>
+              </th>
+
+            
+        </tr>
+    </tbody>
+    </table>
