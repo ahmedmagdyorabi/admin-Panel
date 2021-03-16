@@ -14,12 +14,12 @@ const routes: Routes = [
   { path: 'Login', component: LoginComponent },
   { path: 'Admin', component: AdminpanelComponent, canActivate: [AuthGuardGuard] },
   { path: '', redirectTo: 'Login', pathMatch: 'full' },
-  { path: 'resturants', component: ResturantDataComponent },
-  { path: 'add-resturant', component: AddResturantComponent },
-  { path: 'add-menu', component: AddMenuItemComponent },
-  { path: 'users', component: UsersDataComponent },
-  { path: 'orders', component: OrdersComponent },
-  { path: 'menu', component: MenuComponent }
+  { path: 'resturants', component: ResturantDataComponent,canActivate: [AuthGuardGuard] },
+  { path: 'add-resturant', component: AddResturantComponent, canActivate: [AuthGuardGuard] },
+  { path: 'add-menu', component: AddMenuItemComponent,canActivate: [AuthGuardGuard] },
+  { path: 'users', component: UsersDataComponent, canActivate: [AuthGuardGuard] },
+  { path: 'orders', component: OrdersComponent, canActivate: [AuthGuardGuard] },
+  { path: 'menu', component: MenuComponent, canActivate: [AuthGuardGuard] }
 
 ];
 
